@@ -1,54 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <link rel="stylesheet" href="/CSS/login-page.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="/CSS/login-page.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <a href="/HTML/index.html" ><img src="/img/logo-invisivel.png" height="72px"></a>
-        <a href="index.html" id="login">Pagina Inicial</a>
+      <a href="../HTML/index.html"
+        ><img src="../img/logo-invisivel.png" height="72px"
+      /></a>
+      <a href="../HTML/index.html" id="login">Pagina Inicial</a>
     </div>
 
     <div class="login">
-        <div class="divLogin">
-            <h2>Login SunFlow</h2>
-            <h3>Usuario </h3>
-            <input type="text" name="text" id="usuario">
-            <h3>Senha</h3>
-            <input type="password" name="senha" id="senha">
-            <button onclick="login(event)"><b>LOGIN</b></button>
-
-        </div>
-        <a href="inicial-paineis.html">Login sem conta</a>
-    
+      <div class="divLogin">
+        <h2>Login SunFlow</h2>
+        <h3>Usuario</h3>
+        <input type="text" name="text" id="usuario" />
+        <h3>Senha</h3>
+        <input type="password" name="senha" id="senha" />
+        <button onclick="login(event)"><b>LOGIN</b></button>
+      </div>
+      <a href="/HTML/inicial-paineis.html">Login sem conta</a>
     </div>
 
-    <div class="footer">
+    <div class="footer"></div>
+  </body>
+  <script>
+    function login(event) {
+      event.preventDefault();
 
-    </div>
-    
-</body>
-<script>
-    function login(event){
-        event.preventDefault();
+      let usuario = document.getElementById("usuario").value;
+      let senha = document.getElementById("senha").value;
 
-        let usuario = document.getElementById('usuario').value
-        let senha = document.getElementById('senha').value
-
-        if(usuario === 'admin' && senha === '12345'){
-            window.alert('Login Efetuado')
-            document.getElementById('usuario').textContent = ''
-            document.getElementById('senha').textContent = ''
-            window.location.href = 'initialPage.html'
-        } else {
-            window.alert('Email ou senha incorretos')
-            document.getElementById('usuario').textContent = ''
-            document.getElementById('senha').textContent = ''
-        }
+      if (usuario === "admin" && senha === "12345") {
+        window.alert("Login Efetuado");
+        document.getElementById("usuario").textContent = "";
+        document.getElementById("senha").textContent = "";
+        window.location.href = "../HTML/initialPage.html";
+      } else {
+        window.alert("Email ou senha incorretos");
+        document.getElementById("usuario").textContent = "";
+        document.getElementById("senha").textContent = "";
+      }
     }
-</script>
+  </script>
 </html>
